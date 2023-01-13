@@ -1,0 +1,29 @@
+.index{
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #E8E8E8;
+}
+#img{
+    margin: 5px;
+}
+.img_label{
+    margin: 5px;
+}
+.text{
+    margin: 5px;
+}
+#update_button{
+    margin-bottom: 10px;
+}
+.donw_content{
+    border: 1px solid #E8E8E8;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+img{
+    width: 100px;
+   
+}
+.message{
+    border: 1px solid #E8E8E8;
+}
