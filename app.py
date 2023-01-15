@@ -5,6 +5,7 @@ import mysql.connector
 from mysql.connector.pooling import MySQLConnectionPool
 from dotenv import load_dotenv
 load_dotenv()
+import uuid
 mysql_username = os.getenv("MYSQL_USERNAME")
 mysql_password = os.getenv("MYSQL_PASSWORD")
 mysql_host = os.getenv("MYSQL_HOST")
@@ -37,8 +38,9 @@ def updateImg():
     data=request.form
     content = data["content"]
     
-    s3.Bucket('homeworktest').put_object(Key=img.filename, Body=img)
-    url="https://d25ygub1ioufsy.cloudfront.net/"+ img.filename
+    img_filename = str(uuid.uuid4()) + ".jpg"
+    s3.Bucket('homeworktest').put_object(Key=img_filename, Body=img)
+    url="https://d25ygub1ioufsy.cloudfront.net/"+ img_filename
     connection_object = connection_pool.get_connection()
     mycursor=connection_object.cursor()
     try:
